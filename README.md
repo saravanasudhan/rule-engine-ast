@@ -33,8 +33,51 @@ Before you begin, ensure you have the following installed:
    npm install
    npm run server
 ###Create a .env file with your MongoDB connection string:
-```bash
+
      MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority
 PORT=5003
-###The server will run on ```http://localhost:5003/```
+### The server will run on ```http://localhost:5003/```
 
+## API Endpoints
+1. Create a Rule
+Endpoint: POST /api/rules/create
+Description: Allows you to define a new rule based on user attributes
+Request Body:
+```bash
+{
+  "rule": {
+    "attribute": "age",
+    "operator": ">",
+    "value": 30
+  }
+}
+```
+2. Evaluate Rule
+Endpoint: POST /api/rules/evaluate/:ruleId
+Description: Evaluates the defined rule based on a user's attributes.
+Request Body:
+```bash
+{
+  "user": {
+    "age": 35,
+    "income": 50000
+  }
+}
+```
+## Troubleshooting
+### MongoDB Atlas Connection Error
+If you see the following error:
+
+MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster.
+### Make sure you have:
+- Whitelisted your IP in the MongoDB Atlas dashboard.
+- Added the correct connection string in the .env file.
+## Technologies Used
+- **Node.js**: JavaScript runtime for server-side development.
+- **Express.js**: Web framework for building RESTful APIs.
+- **MongoDB Atlas**: Cloud database service.
+- **Mongoose**: MongoDB object modeling tool.
+- **nodemon**: Utility that automatically restarts the Node.js application when file changes are detected.
+  
+## Author
+### ** Saravanasudhan **
