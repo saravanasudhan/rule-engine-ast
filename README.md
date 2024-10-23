@@ -32,10 +32,10 @@ Before you begin, ensure you have the following installed:
    cd rule-engine-ast
    npm install
    npm run server
-###Create a .env file with your MongoDB connection string:
+### Create a .env file with your MongoDB connection string:
 
      MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority
-PORT=5003
+**PORT=5003**
 ### The server will run on ```http://localhost:5003/```
 
 ## API Endpoints
@@ -80,4 +80,4 @@ MongooseServerSelectionError: Could not connect to any servers in your MongoDB A
 - **nodemon**: Utility that automatically restarts the Node.js application when file changes are detected.
   
 ## Author
-### ** Saravanasudhan **
+### **Saravanasudhan**
